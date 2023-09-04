@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # Cargar el archivo CSV en un DataFrame
-data = pd.read_csv("data\data_finales.csv")
+data = pd.read_csv("Taller\example\data_formateada_k.csv")
 
 # Dividir los datos en características (X) y variable objetivo (y)
 print(data.columns)

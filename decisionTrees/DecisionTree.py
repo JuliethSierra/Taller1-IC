@@ -3,10 +3,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 # Cargar los datos desde el archivo CSV
-data = pd.read_csv('data/data_finales.csv')
+data = pd.read_csv('../Taller1-IC/data/data_finales.csv')
 
 # Seleccionar las características y la variable objetivo
-features = ['ESTU_GENERO', 'FAMI_ESTRATOVIVIENDA', 'FAMI_TIENEINTERNET', 'FAMI_TIENECOMPUTADOR', 'COLE_BILINGUE']
+features = ["ESTU_GENERO","FAMI_ESTRATOVIVIENDA","FAMI_PERSONASHOGAR","FAMI_EDUCACIONPADRE","FAMI_EDUCACIONMADRE","FAMI_TIENEINTERNET","FAMI_TIENESERVICIOTV","FAMI_TIENECOMPUTADOR","FAMI_NUMLIBROS","ESTU_DEDICACIONLECTURADIARIA","ESTU_DEDICACIONINTERNET","ESTU_HORASSEMANATRABAJA","COLE_BILINGUE"]
 target = 'ESTU_GENERACION-E'
 
 X = data[features]
@@ -22,7 +22,7 @@ model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
 
 # Calcular las probabilidades de que la variable objetivo sea 1 en el conjunto de prueba
-probabilities = model.predict_proba(X_test)[:, 1]
+probabilities = model.predict_proba(X_test)[:, 0]
 
 # Calcular el promedio de las probabilidades
 average_probability = probabilities.mean()

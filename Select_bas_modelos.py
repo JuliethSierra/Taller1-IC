@@ -3,7 +3,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.ensemble import RandomForestClassifier
 
 # Lee el archivo CSV
-archivo_csv = 'data_finales.csv'  # Cambia esto a la ruta correcta
+archivo_csv = 'Taller1-IC\data\data_finales.csv'  # Cambia esto a la ruta correcta
 
 # Carga los datos desde el archivo CSV
 dataframe = pd.read_csv(archivo_csv)
