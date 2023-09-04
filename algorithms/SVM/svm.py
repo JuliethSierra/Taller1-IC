@@ -28,7 +28,7 @@ warnings.filterwarnings('ignore')
 """# Carga de datos y preprocesamiento"""
 
 # Carga de datos
-url = 'Taller1-IC\data\data_finales.csv' #Cambiar ruta a CSV con valores normalizados
+url = 'data\data_finales.csv' #Cambiar ruta a CSV con valores normalizados
 # url = 'https://www.datos.gov.co/resource/ynam-yc42.csv' # Tabla de valores sin normalizar
 dataset = pd.read_csv(url)
 

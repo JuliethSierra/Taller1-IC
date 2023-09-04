@@ -1,9 +1,10 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
 
 # Cargar los datos desde el archivo CSV
-data = pd.read_csv('../Taller1-IC/data/data_finales.csv')
+data = pd.read_csv('data\data_finales.csv')
 
 # Seleccionar las características y la variable objetivo
 features = ["ESTU_GENERO","FAMI_ESTRATOVIVIENDA","FAMI_PERSONASHOGAR","FAMI_EDUCACIONPADRE","FAMI_EDUCACIONMADRE","FAMI_TIENEINTERNET","FAMI_TIENESERVICIOTV","FAMI_TIENECOMPUTADOR","FAMI_NUMLIBROS","ESTU_DEDICACIONLECTURADIARIA","ESTU_DEDICACIONINTERNET","ESTU_HORASSEMANATRABAJA","COLE_BILINGUE"]
@@ -28,5 +29,14 @@ probabilities = model.predict_proba(X_test)[:, 0]
 average_probability = probabilities.mean()
 
 average_percentage = average_probability * 100
+average_percentage_no_generacione = model.predict_proba(X_test)[:, 1].mean() * 100
 
 print(f'Probabilidad de que un estudiante sea Generación E es del {average_percentage:.2f}%')
+print(f"Probabilidad de que un estudiante no sea Generación E es del: {average_percentage_no_generacione:.2f}%")
+
+# Realizar predicciones en el conjunto de prueba
+y_pred = model.predict(X_test)
+
+# Calcular la precisión del modelo
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Precisión del modelo: {accuracy:.2f}')
