@@ -3,6 +3,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Cargar el archivo CSV en un DataFrame
 data = pd.read_csv("data\data_finales.csv")
@@ -35,3 +38,22 @@ print(f"Probabilidad de que un estudiante no sea Generación E es del: {total_pe
 # Calcular la precisión del modelo
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Precisión del modelo: {accuracy:.2f}')
+
+# Calcular la matriz de confusión
+confusion = confusion_matrix(y_test, y_pred)
+
+# Crear una gráfica de matriz de confusión
+plt.figure(figsize=(8, 6))
+sns.heatmap(confusion, annot=True, fmt="d", cmap="Blues", cbar=False)
+plt.xlabel('Etiqueta Predicha')
+plt.ylabel('Etiqueta Real')
+plt.title('Matriz de Confusión')
+plt.show()
+
+
+
+
+
+
+
+
