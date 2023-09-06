@@ -3,7 +3,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.ensemble import RandomForestClassifier
 
 # Lee el archivo CSV
-archivo_csv = 'Taller1-IC\data\data_finales.csv'  # Cambia esto a la ruta correcta
+archivo_csv = 'data\data_finales.csv'  # Cambia esto a la ruta correcta
 
 # Carga los datos desde el archivo CSV
 dataframe = pd.read_csv(archivo_csv)
@@ -23,4 +23,4 @@ X_seleccionado = selector.fit_transform(X, y)
 
 # Muestra las características seleccionadas
 caracteristicas_seleccionadas = X.columns[selector.get_support()]
-print("Características seleccionadas:", caracteristicas_seleccionadas)
+print("Características seleccionadas:\n", caracteristicas_seleccionadas)

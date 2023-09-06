@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Lee el archivo CSV
-archivo_csv = 'Taller1-IC\data\data_finales.csv'  # Cambia esto a la ruta correcta
+archivo_csv = 'data\data_finales.csv'  # Cambia esto a la ruta correcta
 
 # Carga los datos desde el archivo CSV
 dataframe = pd.read_csv(archivo_csv)
