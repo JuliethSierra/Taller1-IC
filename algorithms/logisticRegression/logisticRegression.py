@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Cargar el archivo CSV en un DataFrame
-data = pd.read_csv("data\data_finales.csv")
+data = pd.read_csv("data/data_finales.csv")
 
 # Dividir los datos en características (X) y variable objetivo (y)
 print(data.columns)
@@ -36,8 +36,8 @@ print(f"Probabilidad de que un estudiante sea Generación E es del: {total_perce
 print(f"Probabilidad de que un estudiante no sea Generación E es del: {total_percentages[1]:.2f}%")
 
 # Calcular la precisión del modelo
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Precisión del modelo: {accuracy:.2f}')
+accuracy = accuracy_score(y_test, y_pred)*100
+print(f'Precisión del modelo: {accuracy:.2f}%')
 
 # Calcular la matriz de confusión
 confusion = confusion_matrix(y_test, y_pred)
@@ -49,11 +49,3 @@ plt.xlabel('Etiqueta Predicha')
 plt.ylabel('Etiqueta Real')
 plt.title('Matriz de Confusión')
 plt.show()
-
-
-
-
-
-
-
-
